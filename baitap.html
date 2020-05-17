@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAÌ TẬP VUI VẺ KHÔNG QUẠU</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="main">
+        <h1 style ="text-align: center; font-family: Candy Time; font-size: 80px;">MATH</h1>
+        <div class="row">
+            <div class="container">
+                <div class="col-md-4">
+                    <h3 style="color:red ;font-family:Open Sans ExtraBold;">GIẢI PHƯƠNG TRÌNH BẬC 1</h3>
+                    <br>
+                    <label for="so1"> Số a</label>
+                    <input type="number" id="so1">
+                    <br> <br>
+                    <label for="so2">Số b</label>
+                    <input type="number" id="so2">
+                    <br> <br>
+                    <button class="btn btn-primary" onclick="ptr1()">Kết quả</button>
+        
+                    <script>
+                        function ptr1(){
+                            var a= document.getElementById("so1").value;
+                            var b= document.getElementById("so2").value;
+                            var kq='';
+                            (a==0) ? kq ='Phương trình vô nghiệm ' : kq ='Phương trình có nghiệm là: ' + (-b) /a;
+                            alert(kq);
+                        }
+                    </script>
+                </div>
+                <div class="col-md-4">
+                    <h3 style="color:red ; font-family:Open Sans ExtraBold;">GIẢI PHƯƠNG TRÌNH BẬC 2</h3>
+                    <label for="so1"> Số a</label>
+                    <input type="number" id="so1">
+                    <br> <br>
+                    <label for="so2">Số b</label>
+                    <input type="number" id="so2">
+                    <br> <br>
+                    <label for="so3">Số c </label>
+                    <input type="number" id="so3">
+                    <br> <br>
+                    <button class="btn btn-primary" onclick="ptr2()"  >Kết quả</button>
+                    <script>
+                         function  ptr2(){
+                            var a = document.getElementById("so1").value;
+                            var b = document.getElementById("so2").value;
+                            var c = document.getElementById("so3").value;
+                            var kq='';
+                            if(a == 0){
+                                kq=gp1(b,c)
+                            }else{
+                                var delta = b**2 - 4*a*c;
+                                if(delta < 0){
+                                    kq='PTVN';
+                                }else if(delta == 0){
+                                    kq= 'Phương trình có nghiệm kép là: ' + (-b) / (2 * a);
+                                }else{
+                                    var x1= ((-b) + Math.sqrt(delta))/ (2*a);
+                                    var x2 =((-b) - Math.sqrt(delta))/ (2*a);
+                                    kq='Nghiệm x1 là: '+ x1 + ' và nghiệm x2 là: ' + x2
+                                }
+                        
+        
+                            }
+                            alert(kq);
+                        }
+                    </script>
+                </div>
+                <div class="col-md-4">
+                    <h3 style="color: red;font-family:Open Sans ExtraBold;">ĐĂNG KÝ TÀI KHOẢN</h3>
+                    <label for="hoten">Họ tên</label>
+                    <input type="text" id="hoten">
+                    <br> <br>
+                    <label for="email">Email</label>
+                    <input type="email"id="email" style="margin-left: 5px;">
+                    <br> <br>
+                    <label for="phone">Phone</label>
+                    <input type="number" id="phone">
+                    <br> <br>
+                    <label for="ad">Địa chỉ</label>
+                    <input type="text" id="ad">
+                    <br> <br>
+                    <label for="text">Ghi chú</label>
+                    <textarea id="text" rows="5"></textarea>
+                    <br> <br>
+                    <button class="btn btn-primary" onclick="xuat()">Xuất thông tin</button>
+                    <script>
+                        function xuat(){
+                          var name = document.getElementById('hoten').value;
+                          var email1 = document.getElementById('email').value;
+                          var phone1 = document.getElementById('phone').value;
+                          var address = document.getElementById('ad').value;
+                          var com = document.getElementById('text').value;
+                          alert('Họ tên là: '+ name + ' ' +'Email là: '+ email1 + ' ' + 'Số điện thoại là: '+phone1 + ' ' +'Địa chỉ là: ' + address + ' ' + com);
+                        }
+                    </script>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
