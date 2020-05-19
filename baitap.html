@@ -29,14 +29,14 @@
                 </div>
                 <div class="col-md-4">
                     <h3 style="color:red ; font-family:Open Sans ExtraBold;">GIẢI PHƯƠNG TRÌNH BẬC 2</h3>
-                    <label for="so1"> Số a</label>
-                    <input type="number" class="form-control" id="so1">
+                    <label for="soa"> Số a</label>
+                    <input type="number" class="form-control" id="soa">
                    <br>
-                    <label for="so2">Số b</label>
-                    <input type="number" class="form-control" id="so2">
+                    <label for="sob">Số b</label>
+                    <input type="number" class="form-control" id="sob">
                    <br>
-                    <label for="so3">Số c </label>
-                    <input type="number" class="form-control" id="so3">
+                    <label for="soc">Số c </label>
+                    <input type="number" class="form-control" id="soc">
                    <br>
                     <button class="btn btn-primary" onclick="kq2()">Kết quả</button>
                     <br> <br>
@@ -82,9 +82,9 @@
         }
         function kq2(){
             // console.log('ptr2')
-            var a= document.getElementById("so1").value;
-            var b= document.getElementById("so2").value;
-            var c= document.getElementById("so3").value;
+            var a= document.getElementById("soa").value;
+            var b= document.getElementById("sob").value;
+            var c= document.getElementById("soc").value;
             if(a == '' || b == '' || c==''){
                 alert('Vui lòng không để trống')
             }
