@@ -6,106 +6,138 @@
     <title>BAÌ TẬP VUI VẺ KHÔNG QUẠU</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+
     
 </head>
 <body>
-    <div class="main">
-        <h1 style ="text-align: center; font-family: Candy Time; font-size: 80px;">MATH</h1>
+    <div class="container">
+        
         <div class="row">
-            <div class="container">
                 <div class="col-md-4">
                     <h3 style="color:red ;font-family:Open Sans ExtraBold;">GIẢI PHƯƠNG TRÌNH BẬC 1</h3>
-                    <br>
-                    <label for="so1"> Số a</label>
-                    <input type="number" id="so1">
+  
+                    <label for="so1"> Nhập số a</label>
+                    <input type="number" class="form-control" id="so1">
+                    <br> 
+                    <label for="so2">Nhập số b</label>
+                    <input type="number" class="form-control"id="so2">
+                    <br> 
+                    <button class="btn btn-primary" onclick="kq1()">Kết quả</button>
                     <br> <br>
-                    <label for="so2">Số b</label>
-                    <input type="number" id="so2">
-                    <br> <br>
-                    <button class="btn btn-primary" onclick="ptr1()">Kết quả</button>
-        
-                    <script>
-                        function ptr1(){
-                            var a= document.getElementById("so1").value;
-                            var b= document.getElementById("so2").value;
-                            var kq='';
-                            (a==0) ? kq ='Phương trình vô nghiệm ' : kq ='Phương trình có nghiệm là: ' + (-b) /a;
-                            alert(kq);
-                        }
-                    </script>
+                    <p id="result_kq1"></p>
+                   
                 </div>
                 <div class="col-md-4">
                     <h3 style="color:red ; font-family:Open Sans ExtraBold;">GIẢI PHƯƠNG TRÌNH BẬC 2</h3>
                     <label for="so1"> Số a</label>
-                    <input type="number" id="so1">
-                    <br> <br>
+                    <input type="number" class="form-control" id="so1">
+                   <br>
                     <label for="so2">Số b</label>
-                    <input type="number" id="so2">
-                    <br> <br>
+                    <input type="number" class="form-control" id="so2">
+                   <br>
                     <label for="so3">Số c </label>
-                    <input type="number" id="so3">
+                    <input type="number" class="form-control" id="so3">
+                   <br>
+                    <button class="btn btn-primary" onclick="kq2()">Kết quả</button>
                     <br> <br>
-                    <button class="btn btn-primary" onclick="ptr2()"  >Kết quả</button>
-                    <script>
-                         function  ptr2(){
-                            var a = document.getElementById("so1").value;
-                            var b = document.getElementById("so2").value;
-                            var c = document.getElementById("so3").value;
-                            var kq='';
-                            if(a == 0){
-                                kq=gp1(b,c)
-                            }else{
-                                var delta = b**2 - 4*a*c;
-                                if(delta < 0){
-                                    kq='PTVN';
-                                }else if(delta == 0){
-                                    kq= 'Phương trình có nghiệm kép là: ' + (-b) / (2 * a);
-                                }else{
-                                    var x1= ((-b) + Math.sqrt(delta))/ (2*a);
-                                    var x2 =((-b) - Math.sqrt(delta))/ (2*a);
-                                    kq='Nghiệm x1 là: '+ x1 + ' và nghiệm x2 là: ' + x2
-                                }
-                        
-        
-                            }
-                            alert(kq);
-                        }
-                    </script>
+                    <p id="result_kq2"></p>
                 </div>
                 <div class="col-md-4">
-                    <h3 style="color: red;font-family:Open Sans ExtraBold;">ĐĂNG KÝ TÀI KHOẢN</h3>
+                    <h3 style="color: red;font-family:Open Sans ExtraBold;">ĐĂNG KÝ THÀNH VIÊN</h3>
                     <label for="hoten">Họ tên</label>
-                    <input type="text" id="hoten">
-                    <br> <br>
+                    <input type="text" class="form-control" id="hoten">
+                   <br>
                     <label for="email">Email</label>
-                    <input type="email"id="email" style="margin-left: 5px;">
-                    <br> <br>
+                    <input type="email" class="form-control"id="email">
+                    <br> 
                     <label for="phone">Phone</label>
-                    <input type="number" id="phone">
-                    <br> <br>
+                    <input type="tel"class="form-control" id="phone">
+                    <br> 
                     <label for="ad">Địa chỉ</label>
-                    <input type="text" id="ad">
-                    <br> <br>
+                    <input type="text"class="form-control" id="ad">
+                    <br> 
                     <label for="text">Ghi chú</label>
-                    <textarea id="text" rows="5"></textarea>
+                    <textarea id="text" class="form-control" rows="3"></textarea>
+                    <br> 
+                    <button class="btn btn-primary" onclick="kq3()">Xuất thông tin</button>
                     <br> <br>
-                    <button class="btn btn-primary" onclick="xuat()">Xuất thông tin</button>
-                    <script>
-                        function xuat(){
-                          var name = document.getElementById('hoten').value;
-                          var email1 = document.getElementById('email').value;
-                          var phone1 = document.getElementById('phone').value;
-                          var address = document.getElementById('ad').value;
-                          var com = document.getElementById('text').value;
-                          alert('Họ tên là: '+ name + ' ' +'Email là: '+ email1 + ' ' + 'Số điện thoại là: '+phone1 + ' ' +'Địa chỉ là: ' + address + ' ' + com);
-                        }
-                    </script>
+                    <p id="result_kq3"></p>
                 </div>
             </div>
             
-        </div>
+        
     </div>
-    
+    <script>
+        function kq1(){
+            // console.log('ptr1')
+            var a= document.getElementById("so1").value;
+            var b= document.getElementById("so2").value; //lấy giá trị từ input vào id so2
+            if(a == '' || b == ''){
+                alert('Vui lòng không để trống')
+            }
+            else{
+            var kq= gtp1(a,b);
+            document.getElementById("result_kq1").innerHTML = kq // để giá trị có được từ kq vào id result_kq1
+            }
+        }
+        function kq2(){
+            // console.log('ptr2')
+            var a= document.getElementById("so1").value;
+            var b= document.getElementById("so2").value;
+            var c= document.getElementById("so3").value;
+            if(a == '' || b == '' || c==''){
+                alert('Vui lòng không để trống')
+            }
+            else{
+            var kq= gtp2(a,b,c);
+            document.getElementById("result_kq2").innerHTML = kq;
+            }
+        }
+        function kq3(){
+            // console.log('xuat')
+            var name = document.getElementById('hoten').value;
+            var email1 = document.getElementById('email').value;
+            var phone1 = document.getElementById('phone').value;
+            var address = document.getElementById('ad').value;
+            var com = document.getElementById('text').value;
+            if(name == '' || email1 == '' || phone1=='' || address==''|| com ==''){
+                alert('Vui lòng không để trống')
+            }
+            else{
+                var kq= xuat(name, email1, phone1, address, com);
+                document.getElementById("result_kq3").innerHTML =kq;
+            }
+          
+        }
+        function gtp1(a,b){
+            var kq='';
+            (a==0) ? kq= 'Phương trình vô nghiệm' : kq= 'Phương trình có nghiệm' + (-b)/a
+            return kq;
+        }
+        function gtp2(a,b,c){
+            var kq='';
+           if(a == 0){
+               kq= gtp1(b,c);
+           }else{
+               var delta = (b * b) - (4*a*c);
+               if(delta < 0){
+                   kq='Phương trình vô nghiệm mất rồi';
+               }else if(delta == 0){
+                   var x = (-b) / (2 * a);
+                   kq= 'Phương trình có nghiệm kép là: ' + x;
+               }else{
+                   var x1= ((-b) + Math.sqrt(delta))/ (2*a);
+                   var x2 =((-b) - Math.sqrt(delta))/ (2*a);
+                   kq='Nghiệm x1 là: '+ x1 + ' và nghiệm x2 là: ' + x2
+               }
+            }
+            return kq;
+        }
+        function xuat(name, email1, phone1, address, com){
+            var kq='';
+         kq = 'Họ tên là: '+ name + ' <br>' +'Email là: '+ email1 + ' <br>' + 'Số điện thoại là: '+phone1 + ' <br>' +'Địa chỉ là: ' + address + '<br> ' + 'Ghi chú: ' + com;
+        return kq;
+        }
+    </script>
 </body>
 </html>
